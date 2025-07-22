@@ -1,0 +1,18 @@
+xcompmgr -c &
+setxkbmap it
+feh --bg-scale /home/renny/Downloads/background2.png
+while true; do
+TEMP=$(sensors | sed -rn 's/.*Tccd1:\s+.([0-9.]+).*/\1/p')
+xsetroot -name " |  $(curl -ks https://www.worldcoinindex.com/coin/ravencoin | grep span-coinprice -A 2 | tail -n 1 | cut -c -7) |  $(curl -ks -d "$" -f1 https://ethereumprice.org/ | grep 'price":' | grep , | cut -d '"' -f4 | cut -c -7) |  $(curl -ks https://blockchain.info/ticker | grep USD | cut -f3 -d ',' | cut -f2 -d ':'| sed -e 's/^[[:space:]]*//') |  $TEMP °C |  $(free -m | grep '^Mem' | awk '{print ":" $3 "MB"}') |  $(awk '{u=$2+$4; t=$2+$4+$5; if (NR==1){u1=u; t1=t;} else print ($2+$4-u1) * 100 / (t-t1) ""; }' \
+<(grep 'cpu ' /proc/stat) <(sleep 1;grep 'cpu ' /proc/stat) | cut -c -4)% |  $( date +"%F %R") "
+sleep 2
+done &
+while true; do
+pacmd set-source-volume alsa_input.usb-bestechnic_Razer_Hammerhead_USB-C_ANC_20160406.1-00.analog-stereo 220000
+sleep 10
+done &
+autocutsel -fork -selection CLIPBOARD
+autocutsel -fork -selection PRIMARY
+xrdb ~/.Xresources &
+#openrgb -p archultimate.orp &
+exec dwm

@@ -1,0 +1,7 @@
+#!/bin/bash
+while true; do
+filemusic=$(ls /home/$(whoami)/Music | shuf -n 1)
+dir="/home/$(whoami)/Music/$filemusic"
+echo $dir
+mpv $dir
+done;

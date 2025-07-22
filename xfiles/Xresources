@@ -1,0 +1,37 @@
+URxvt.font: xft:sourcecodepro:size=14
+! special
+*.foreground:   #d4cac7
+*.background:   #171b1c
+*.cursorColor:  #d4cac7
+
+! black
+*.color0:       #6d1df3
+*.color8:       #f797a0
+
+! red
+*.color1:       #37aacf
+*.color9:       #f4bda8
+
+! green
+*.color2:       #b41539
+*.color10:      #442eef
+
+! yellow
+*.color3:       #79489d
+*.color11:      #55b9cb
+
+! blue
+*.color4:       #543cbe
+*.color12:      #b3a6f7
+
+! magenta
+*.color5:       #616b9d
+*.color13:      #b5ace8
+
+! cyan
+*.color6:       #aabec2
+*.color14:      #46abbd
+
+! white
+*.color7:       #e7e1e0
+*.color15:      #51d4a0
