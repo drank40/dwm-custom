@@ -85,9 +85,9 @@ static const char *monitor[] = { "/usr/bin/htop", NULL };
 static const char *termcmd[]  = { "st", NULL };
 //volume controls
 #include <X11/XF86keysym.h>
-static const char *upvol[]   = { "amixer", "-q", "-D", "pulse", "sset", "Master", "5%+", NULL };
-static const char *downvol[] = { "amixer", "-q", "-D", "pulse", "sset", "Master","5%-", NULL };
-static const char *mutevol[] = { "amixer", "-q", "-D", "pulse", "sset","Master", "0", NULL };
+static const char *upvol[]   = { "pulsemixer", "--change-volume", "+5", NULL };
+static const char *downvol[]   = { "pulsemixer", "--change-volume", "-5", NULL };
+static const char *mutevol[] = { "pulsemixer", "--set-volume", "0", NULL };
 static const char *nextsong[] = { "killall", "mpv", NULL };
 static const char *killmpv[] = { "killall", "mpv","playmusic", NULL };
 static const char *pausevol[] = { "~/Documents/bash/pause.sh", NULL };
