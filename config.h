@@ -88,7 +88,6 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *upvol[]   = { "pulsemixer", "--change-volume", "+5", NULL };
 static const char *downvol[]   = { "pulsemixer", "--change-volume", "-5", NULL };
 static const char *mutevol[] = { "pulsemixer", "--set-volume", "0", NULL };
-static const char *nextsong[] = { "killall", "mpv", NULL };
 static const char *killmpv[] = { "killall", "mpv","playmusic", NULL };
 static const char *lightup[] = { "~/.local/bin/light", "+5", NULL };
 static const char *lightdown[] = { "~/.local/bin/light", "-5", NULL };
@@ -150,7 +149,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F6,     spawn,          {.v = nextsong } },
     { MODKEY,                       XK_F7,     spawn,          {.v = lightdown } },
     { MODKEY,                       XK_F8,     spawn,          {.v = lightup } },
-    { MODKEY,                       XK_F1,     spawn,          {.v = nextsong } },
+    { MODKEY,                       XK_F1,     spawn,          {.v = mutevol } },
     { MODKEY,                       XK_F10,     spawn,          {.v = suspend } },
     { MODKEY|ShiftMask,                       XK_F1,     spawn,          {.v = killmpv } },
 	TAGKEYS(                        XK_1,                      0)
