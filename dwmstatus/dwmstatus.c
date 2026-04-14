@@ -150,6 +150,9 @@ getbattery(char *base)
 	free(co);
 
 	co = readfile(base, "status");
+	if (co == NULL) {
+		return smprintf("");
+	}
 	if (!strncmp(co, "Discharging", 11)) {
 		status = '-';
 	} else if(!strncmp(co, "Charging", 8)) {
@@ -157,6 +160,7 @@ getbattery(char *base)
 	} else {
 		status = '?';
 	}
+	free(co);
 
 	if (remcap < 0 || descap < 0)
 		return smprintf("invalid");
@@ -172,7 +176,9 @@ gettemperature(char *base, char *sensor)
 	co = readfile(base, sensor);
 	if (co == NULL)
 		return smprintf("");
-	return smprintf("%02.0f°C", atof(co) / 1000);
+	char *ret = smprintf("%02.0f°C", atof(co) / 1000);
+	free(co);
+	return ret;
 }
 
 int

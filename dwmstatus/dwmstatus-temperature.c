@@ -10,6 +10,8 @@ gettemperature(char *base, char *sensor)
 	co = readfile(base, sensor);
 	if (co == NULL)
 		return smprintf("");
-	return smprintf("%02.0f°C", atof(co) / 1000);
+	char *ret = smprintf("%02.0f°C", atof(co) / 1000);
+	free(co);
+	return ret;
 }
 
