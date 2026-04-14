@@ -30,7 +30,8 @@ static const char *colors[][3]      = {
 
 
 
-static const char *tags[] = { "","", "", "", "", "", "", ""  };
+//static const char *tags[] = { "","", "", "", "", "", "", ""  };
+static const char *tags[] = { "I","II", "III", "IV", "V", "VI", "VII", "VIII"  };
 
 static const Rule rules[] = {
 	/* xprop(1):
