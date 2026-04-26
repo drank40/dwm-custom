@@ -45,7 +45,7 @@ static const Rule rules[] = {
 	{ "St",      NULL,     "st"             , 0,         0,          1,           1,        -1 }, 
 	{ "gdb",      NULL,     "gdb"           , 0,         0,          1,           1,        -1 }, 
 	{ NULL,      NULL,     "TaxMan"         , 0,         1,          0,           1,        -1 }, 
-	{ NULL,      NULL,     "SuperCollider"  , 0,         1,          0,           1,        -1 }, 
+	{ "SuperCollider", NULL, NULL,             0,         1,          0,           1,        -1 },
 	{ NULL,      NULL,     "Stethoscope"    , 0,         1,          0,           1,        -1 }, 
 	{ NULL,      NULL,     "localhost levels (dBFS)"    , 0,         1,          0,           1,        -1 }, 
 	{ NULL,      NULL,     "localhost Node Tree"    , 0,         1,          0,           1,        -1 }, 
