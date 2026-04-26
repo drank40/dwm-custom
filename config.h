@@ -39,13 +39,17 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,           1 << 8,    0,          0,          -1,        -1 },
+	{ "Gimp",    NULL,     NULL,              0,         1,          0,           0,        -1 },
+	{ "Firefox", NULL,     NULL,            1 << 8,      0,          0,          -1,        -1 },
 	{ "URxvt",      NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ "St",      NULL,     "st"             , 0,         0,          1,           1,        -1 }, 
-	{ "gdb",      NULL,     "gdb"             , 0,         0,          1,           1,        -1 }, 
-	{ NULL,      NULL,     "TaxMan"        , 0,         1,          0,           1,        -1 }, 
-	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
+	{ "gdb",      NULL,     "gdb"           , 0,         0,          1,           1,        -1 }, 
+	{ NULL,      NULL,     "TaxMan"         , 0,         1,          0,           1,        -1 }, 
+	{ NULL,      NULL,     "SuperCollider"  , 0,         1,          0,           1,        -1 }, 
+	{ NULL,      NULL,     "Stethoscope"    , 0,         1,          0,           1,        -1 }, 
+	{ NULL,      NULL,     "localhost levels (dBFS)"    , 0,         1,          0,           1,        -1 }, 
+	{ NULL,      NULL,     "localhost Node Tree"    , 0,         1,          0,           1,        -1 }, 
+	{ NULL,      NULL,     "Event Tester",    0,         0,          0,           1,        -1 }, /* xev */
 	{ NULL,      NULL,     "svkbd", ((int)((1LL << LENGTH(tags)) - 1)),         1,          0,           1,        -1 }, /* xev */
 
 };
