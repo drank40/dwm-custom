@@ -150,6 +150,7 @@ typedef struct {
 	int isterminal;
 	int noswallow;
 	int monitor;
+	const char *floatpos; /* "TL","TR","BL","BR","C" or NULL */
 } Rule;
 
 /* function declarations */
@@ -325,6 +326,22 @@ applyrules(Client *c)
 			for (m = mons; m && m->num != r->monitor; m = m->next);
 			if (m)
 				c->mon = m;
+			if (r->floatpos && r->floatpos[0] && c->isfloating) {
+				int gap = c->mon->gappx;
+				int fw = c->w + 2 * borderpx;
+				int fh = c->h + 2 * borderpx;
+				char tb = r->floatpos[0];
+				char lr = r->floatpos[1];
+				if (tb == 'C') {
+					c->x = c->mon->wx + (c->mon->ww - fw) / 2;
+					c->y = c->mon->wy + (c->mon->wh - fh) / 2;
+				} else {
+					if (lr == 'L')      c->x = c->mon->wx + gap;
+					else if (lr == 'R') c->x = c->mon->wx + c->mon->ww - fw - gap;
+					if (tb == 'T')      c->y = c->mon->wy + gap;
+					else if (tb == 'B') c->y = c->mon->wy + c->mon->wh - fh - gap;
+				}
+			}
 		}
 	}
 	if (ch.res_class)

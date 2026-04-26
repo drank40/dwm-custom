@@ -38,19 +38,19 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
-	{ "Gimp",    NULL,     NULL,              0,         1,          0,           0,        -1 },
-	{ "Firefox", NULL,     NULL,            1 << 8,      0,          0,          -1,        -1 },
-	{ "URxvt",      NULL,     NULL,           0,         0,          1,           0,        -1 },
-	{ "St",      NULL,     "st"             , 0,         0,          1,           1,        -1 }, 
-	{ "gdb",      NULL,     "gdb"           , 0,         0,          1,           1,        -1 }, 
-	{ NULL,      NULL,     "TaxMan"         , 0,         1,          0,           1,        -1 }, 
-	{ "SuperCollider", NULL, NULL,             0,         1,          0,           1,        -1 },
-	{ NULL,      NULL,     "Stethoscope"    , 0,         1,          0,           1,        -1 }, 
-	{ NULL,      NULL,     "localhost levels (dBFS)"    , 0,         1,          0,           1,        -1 }, 
-	{ NULL,      NULL,     "localhost Node Tree"    , 0,         1,          0,           1,        -1 }, 
-	{ NULL,      NULL,     "Event Tester",    0,         0,          0,           1,        -1 }, /* xev */
-	{ NULL,      NULL,     "svkbd", ((int)((1LL << LENGTH(tags)) - 1)),         1,          0,           1,        -1 }, /* xev */
+	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor  floatpos */
+	{ "Gimp",    NULL,     NULL,              0,         1,          0,           0,        -1,    NULL },
+	{ "Firefox", NULL,     NULL,            1 << 8,      0,          0,          -1,        -1,    NULL },
+	{ "URxvt",      NULL,     NULL,           0,         0,          1,           0,        -1,    NULL },
+	{ "St",      NULL,     "st"             , 0,         0,          1,           1,        -1,    NULL },
+	{ "gdb",      NULL,     "gdb"           , 0,         0,          1,           1,        -1,    NULL },
+	{ NULL,      NULL,     "TaxMan"         , 0,         1,          0,           1,        -1,    NULL },
+	{ "SuperCollider", NULL, NULL,             0,         1,          0,           1,        -1,    "BR" },
+	{ NULL,      NULL,     "Stethoscope"    , 0,         1,          0,           1,        -1,    NULL },
+	{ NULL,      NULL,     "localhost levels (dBFS)"    , 0,         1,          0,           1,        -1,    NULL },
+	{ NULL,      NULL,     "localhost Node Tree"    , 0,         1,          0,           1,        -1,    NULL },
+	{ NULL,      NULL,     "Event Tester",    0,         0,          0,           1,        -1,    NULL }, /* xev */
+	{ NULL,      NULL,     "svkbd", ((int)((1LL << LENGTH(tags)) - 1)),         1,          0,           1,        -1,    NULL }, /* xev */
 
 };
 
